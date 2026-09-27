@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Henna Plant · Lawsonia inermis</title>
+    <!-- Google Fonts & Font Awesome for icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f5ef;
+            background-image: radial-gradient(circle at 10% 20%, rgba(200, 160, 120, 0.05) 0%, transparent 30%),
+                              radial-gradient(circle at 90% 70%, rgba(160, 120, 80, 0.05) 0%, transparent 40%);
+            font-family: 'Inter', sans-serif;
+            color: #2e241e;
+            line-height: 1.55;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 252, 248, 0.9);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(60, 40, 20, 0.25), 0 8px 24px -8px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem;
+            border: 1px solid #ede3d7;
+        }
+
+        /* header / hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+            border-bottom: 2px dashed #dcc9b2;
+            padding-bottom: 2rem;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            line-height: 1;
+            background: #fff1e0;
+            width: 5.5rem;
+            height: 5.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2rem;
+            box-shadow: 0 10px 15px -5px rgba(140, 100, 60, 0.2);
+            color: #a6622c;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #3f2c1b;
+            line-height: 1.2;
+        }
+
+        .hero-text .sci {
+            font-style: italic;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #7a5e44;
+            margin-top: 0.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-text .common-names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin-top: 0.6rem;
+            color: #5b4634;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .hero-text .common-names i {
+            color: #a6622c;
+            margin-right: 0.3rem;
+        }
+
+        .chip {
+            background: #e7dbce;
+            padding: 0.2rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #3d2d1f;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* card grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.6rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #ffffffec;
+            border-radius: 1.8rem;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 8px 20px -10px rgba(80, 55, 30, 0.15);
+            border: 1px solid #f0e5da;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 30px -12px rgba(100, 70, 40, 0.25);
+            border-color: #dcc9b2;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.2px;
+            color: #4c3522;
+            margin-bottom: 1rem;
+            border-left: 5px solid #c58f5c;
+            padding-left: 0.9rem;
+        }
+
+        .card-header i {
+            color: #b0763d;
+            font-size: 1.2rem;
+            width: 1.6rem;
+            text-align: center;
+        }
+
+        .card p, .card li {
+            color: #3d3229;
+            font-size: 0.96rem;
+        }
+
+        .card ul, .card ol {
+            padding-left: 1.4rem;
+            margin-top: 0.3rem;
+        }
+
+        .card li {
+            margin-bottom: 0.3rem;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, #e6d8ca, transparent);
+            margin: 1.2rem 0 1rem;
+        }
+
+        /* special blocks */
+        .table-mini {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: #faf6f1;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .table-mini td {
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid #eee3d8;
+        }
+
+        .table-mini tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-mini td:first-child {
+            font-weight: 600;
+            color: #6f523a;
+            width: 38%;
+        }
+
+        .badge {
+            background: #fff1e5;
+            color: #9a5e2e;
+            border-radius: 2rem;
+            padding: 0.2rem 1rem;
+            font-weight: 500;
+            font-size: 0.8rem;
+            display: inline-block;
+            letter-spacing: 0.2px;
+            border: 1px solid #edd8c4;
+        }
+
+        .warning-box {
+            background: #fff7e7;
+            border-left: 6px solid #e68a2e;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px -5px rgba(200, 120, 30, 0.1);
+        }
+
+        .warning-box i {
+            color: #d97c1a;
+            margin-right: 0.6rem;
+        }
+
+        .scientific-name {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            background: #f3ede6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            display: inline-block;
+        }
+
+        .fact-list {
+            list-style: none;
+            padding-left: 0;
+            counter-reset: fact-counter;
+        }
+
+        .fact-list li {
+            counter-increment: fact-counter;
+            margin-bottom: 0.7rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.96rem;
+        }
+
+        .fact-list li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            top: -0.1rem;
+            font-size: 1rem;
+            color: #8f6b44;
+        }
+
+        /* steps flow */
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.3rem 0.6rem;
+            font-weight: 500;
+            background: #f7f1ea;
+            padding: 0.8rem 1rem;
+            border-radius: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .flow span {
+            background: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            border: 1px solid #e2d5c8;
+        }
+
+        .flow i {
+            color: #b0763d;
+            font-size: 0.8rem;
+            margin: 0 0.2rem;
+        }
+
+        .identify-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1rem;
+            margin-top: 0.6rem;
+            align-items: center;
+        }
+
+        .identify-steps .step {
+            background: #f2ebe3;
+            padding: 0.5rem 1rem;
+            border-radius: 3rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .identify-steps i {
+            color: #a6622c;
+        }
+
+        .arrow {
+            color: #b99b80;
+            font-size: 1.1rem;
+            margin: 0 0.1rem;
+        }
+
+        /* footer / sources */
+        .sources {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2d5c8;
+            font-size: 0.85rem;
+            color: #6c5a4a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sources i {
+            margin-right: 0.5rem;
+            color: #b0763d;
+        }
+
+        .protect-banner {
+            background: linear-gradient(105deg, #edf3e9 0%, #e3ede0 100%);
+            border-radius: 2rem;
+            padding: 1.3rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 1.8rem;
+            margin: 1.8rem 0 0.8rem;
+            border: 1px solid #d3e0c9;
+        }
+
+        .protect-banner i {
+            font-size: 2.5rem;
+            color: #588157;
+        }
+
+        .protect-banner p {
+            font-weight: 500;
+            color: #2b3e26;
+            font-size: 1.05rem;
+        }
+
+        /* responsiveness */
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.5rem 1rem;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-icon {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.8rem;
+            }
+        }
+
+        /* tiny utilities */
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 1rem; }
+        .text-soft { color: #6e5b4b; }
+        .bold { font-weight: 600; }
+        .emoji-bullet { list-style: none; padding-left: 0; }
+        .emoji-bullet li { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; align-items: flex-start; }
+        .emoji-bullet li span:first-child { flex-shrink: 0; width: 1.4rem; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Hero / header -->
+    <div class="hero">
+        <div class="hero-icon">🌿</div>
+        <div class="hero-text">
+            <h1>Henna Plant</h1>
+            <div class="sci">Lawsonia inermis L.</div>
+            <div class="common-names">
+                <span><i class="fas fa-leaf"></i> Henna</span>
+                <span><i class="fas fa-hand-sparkles"></i> Mehndi</span>
+                <span><i class="fas fa-seedling"></i> Mignonette tree</span>
+                <span class="chip"><i class="fas fa-flask"></i> Lythraceae</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction + botanical card side by side? we use grid -->
+    <div class="grid">
+        <!-- Introduction -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-book-open"></i> 1. Introduction</div>
+            <p>Henna is a flowering shrub best known for the natural reddish-orange dye obtained from its leaves. The plant has been used for centuries for traditional body decoration, hair colouring and other cultural purposes.</p>
+            <p class="mt-3">Henna grows well in warm and relatively dry regions. It is native to parts of tropical Africa, the Arabian Peninsula, Pakistan and India.</p>
+            <p class="mt-2"><span class="badge"><i class="fas fa-microscope"></i> Lawsonia inermis L.</span></p>
+        </div>
+
+        <!-- Botanical classification -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-sitemap"></i> 2. Botanical classification</div>
+            <table class="table-mini">
+                <tr><td>Kingdom</td><td>Plantae</td></tr>
+                <tr><td>Phylum</td><td>Streptophyta</td></tr>
+                <tr><td>Class</td><td>Equisetopsida</td></tr>
+                <tr><td>Subclass</td><td>Magnoliidae</td></tr>
+                <tr><td>Order</td><td>Myrtales</td></tr>
+                <tr><td>Family</td><td>Lythraceae</td></tr>
+                <tr><td>Genus</td><td>Lawsonia</td></tr>
+                <tr><td>Species</td><td>Lawsonia inermis</td></tr>
+            </table>
+            <p class="mt-2 text-soft"><i class="fas fa-user-tie"></i> Botanical authority: L.</p>
+        </div>
+
+        <!-- Habit & appearance -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-tree"></i> 3. Habit & general appearance</div>
+            <p>Henna is a branched, bushy shrub and may sometimes grow into a small tree. It can reach around 2 m or more depending on growing conditions.</p>
+            <ul class="emoji-bullet mt-2">
+                <li><span>🌿</span> Bushy and highly branched growth</li>
+                <li><span>🍃</span> Small, opposite leaves</li>
+                <li><span>🌸</span> Numerous small, fragrant flowers</li>
+                <li><span>🟤</span> Small fruits containing many seeds</li>
+                <li><span>🌱</span> Often grows well in warm and relatively dry conditions</li>
+            </ul>
+        </div>
+
+        <!-- Leaf -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-leaf"></i> 4. Leaf</div>
+            <p>The leaves are one of the most important parts of the henna plant.</p>
+            <ul class="mt-2" style="padding-left:1.2rem;">
+                <li>Leaves are simple.</li>
+                <li>They occur in opposite pairs.</li>
+                <li>Leaf blade is generally elliptical to ovate/obovate.</li>
+                <li>Usually smooth and green.</li>
+                <li>Contain the natural colouring compound responsible for henna's famous stain.</li>
+            </ul>
+            <div class="divider"></div>
+            <p><i class="fas fa-question-circle" style="color:#b0763d;"></i> <span class="bold">Why important?</span> Leaves are collected, dried and powdered to prepare traditional henna preparations.</p>
+        </div>
+
+        <!-- Stem -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-seedling"></i> 5. Stem</div>
+            <ul class="emoji-bullet">
+                <li><span>🌿</span> Highly branched</li>
+                <li><span>🌳</span> Woody in mature plants</li>
+                <li><span>🟤</span> Brownish to greyish in older portions</li>
+                <li><span>🌱</span> Capable of producing many small branches</li>
+            </ul>
+            <p class="mt-2">The numerous branches give the plant its characteristic bushy appearance.</p>
+        </div>
+
+        <!-- Flower & Fruit (combined? but keep as separate cards) -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-spa"></i> 6. Flower</div>
+            <p>Henna produces many small flowers arranged in branched flower clusters called <span class="bold">panicles</span>.</p>
+            <ul class="mt-2" style="padding-left:1.2rem;">
+                <li>Small flowers</li>
+                <li>Usually white, cream or yellowish</li>
+                <li>Fragrant</li>
+                <li>Produced in clusters</li>
+                <li>Attractive to insects</li>
+            </ul>
+            <p class="mt-2">The flowers are important in the plant's reproductive process.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><i class="fas fa-circle"></i> 7. Fruit and seeds</div>
+            <p>After flowering, henna develops small fruits.</p>
+            <p><span class="bold">Fruit:</span> Small and roughly spherical, develops from the flower after fertilization, contains numerous seeds.</p>
+            <p class="mt-2"><span class="bold">Seeds:</span> Small and numerous, help in producing new plants.</p>
+        </div>
+
+        <!-- Reproduction -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-sync-alt"></i> 8. Reproduction</div>
+            <p>Henna reproduces mainly through seeds.</p>
+            <div class="flow">
+                <span>🌸 Flower</span> <i class="fas fa-arrow-right"></i>
+                <span>🐝 Pollination</span> <i class="fas fa-arrow-right"></i>
+                <span>✨ Fertilization</span> <i class="fas fa-arrow-right"></i>
+                <span>🟤 Fruit formation</span> <i class="fas fa-arrow-right"></i>
+                <span>🌱 Seed formation</span> <i class="fas fa-arrow-right"></i>
+                <span>🌿 New plant</span>
+            </div>
+            <p class="mt-3">Insects can visit the flowers and contribute to pollination.</p>
+        </div>
+
+        <!-- Secret behind colour -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-palette"></i> 9. The secret behind the henna colour</div>
+            <p>The most famous chemical constituent of henna is <span class="bold">lawsone</span>.</p>
+            <p class="mt-2"><span class="badge" style="background:#f5e3d4;">🧪 Lawsone</span> – natural orange-red pigment found mainly in henna leaves.</p>
+            <p class="mt-2">When henna preparation is applied to keratin-containing materials such as hair or nails, lawsone can bind with keratin and produce the characteristic orange-to-reddish-brown stain.</p>
+            <p class="mt-2">This is why henna is famous as a natural colouring material.</p>
+        </div>
+
+        <!-- Uses -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-hands"></i> 10. Uses of henna</div>
+            <p><i class="fas fa-paint-brush" style="color:#b0763d;"></i> <span class="bold">Traditional & cosmetic</span></p>
+            <ul style="padding-left:1.2rem; margin-bottom:0.6rem;">
+                <li>Body decoration and mehndi</li>
+                <li>Hair colouring</li>
+                <li>Nail staining</li>
+                <li>Cultural and ceremonial purposes</li>
+            </ul>
+            <p><i class="fas fa-leaf" style="color:#588157;"></i> <span class="bold">Traditional medicinal</span> – used in various cultures, but traditional use does not automatically mean medically proven.</p>
+            <p class="mt-2"><i class="fas fa-globe" style="color:#a6622c;"></i> <span class="bold">Other uses</span> – environmental, social and other traditional uses.</p>
+        </div>
+
+        <!-- Ecological & growing (two in one? let's keep separate) -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-globe-asia"></i> 11. Ecological importance</div>
+            <ul class="emoji-bullet">
+                <li><span>☀️</span> Adapted to warm climates, tolerates dry conditions</li>
+                <li><span>🐝</span> Flowers provide resources for insects</li>
+                <li><span>🌿</span> Performs photosynthesis, releases oxygen</li>
+                <li><span>🏡</span> Provides plant biomass and habitat</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><i class="fas fa-sun"></i> 12. Growing conditions</div>
+            <p><i class="fas fa-thermometer-half"></i> <span class="bold">Temperature:</span> Warm and hot climates.</p>
+            <p><i class="fas fa-sun"></i> <span class="bold">Sunlight:</span> Good sunlight beneficial.</p>
+            <p><i class="fas fa-mountain"></i> <span class="bold">Soil:</span> Tolerates relatively dry conditions, range of soils.</p>
+            <p><i class="fas fa-tint"></i> <span class="bold">Water:</span> Relatively tolerant of dry conditions once established; adequate water for healthy growth.</p>
+        </div>
+
+        <!-- Safety warning -->
+        <div class="card" style="grid-column: span 2; background: #fffbf5;">
+            <div class="card-header"><i class="fas fa-exclamation-triangle" style="color:#d97706;"></i> 13. Safety: natural henna vs. “black henna”</div>
+            <div class="warning-box">
+                <i class="fas fa-skull-crosswalk"></i> <span class="bold">Important:</span> Natural henna normally produces an orange, reddish-orange or brownish-red stain.
+            </div>
+            <p>Products sold as <span class="bold">"black henna"</span> may contain additional chemicals, particularly <span class="bold">p-phenylenediamine (PPD)</span>. PPD can cause serious skin reactions in some people.</p>
+            <p class="mt-2" style="font-style:italic;">⚠️ Natural henna and "black henna" are not necessarily the same thing.</p>
+            <p>Do not assume that every product labelled "henna" contains only natural henna.</p>
+        </div>
+
+        <!-- Cultural importance -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-globe"></i> 14. Cultural importance</div>
+            <p>Henna has an important place in traditions across South Asia, the Middle East and parts of Africa.</p>
+            <ul style="padding-left:1.2rem;">
+                <li>Weddings</li>
+                <li>Festivals</li>
+                <li>Religious and cultural celebrations</li>
+                <li>Traditional body decoration</li>
+                <li>Hair decoration</li>
+            </ul>
+            <p class="mt-2">The practice of applying henna is commonly known as <span class="bold">mehndi</span> in South Asia.</p>
+        </div>
+
+        <!-- Interesting facts -->
+        <div class="card">
+            <div class="card-header"><i class="fas fa-lightbulb"></i> 15. Interesting facts</div>
+            <ul class="fact-list">
+                <li>The scientific name of henna is <i>Lawsonia inermis</i>.</li>
+                <li>Belongs to Lythraceae — same family as <i>Lagerstroemia</i>.</li>
+                <li>Characteristic colour comes mainly from lawsone.</li>
+                <li>Leaves are the main plant part used for dye.</li>
+                <li>Natural henna usually produces orange to reddish-brown, not black.</li>
+                <li>Adapted to warm climates; tolerates dry conditions.</li>
+            </ul>
+        </div>
+
+        <!-- How to identify on campus -->
+        <div class="card" style="grid-column: span 2;">
+            <div class="card-header"><i class="fas fa-search"></i> 16. How to identify henna on our campus</div>
+            <div class="identify-steps">
+                <span class="step"><i class="fas fa-tree"></i> Bushy shrub</span>
+                <i class="fas fa-arrow-right arrow"></i>
+                <span class="step"><i class="fas fa-leaf"></i> Small opposite leaves</span>
+                <i class="fas fa-arrow-right arrow"></i>
+                <span class="step"><i class="fas fa-spa"></i> Small fragrant flowers in clusters</span>
+                <i class="fas fa-arrow-right arrow"></i>
+                <span class="step"><i class="fas fa-circle"></i> Small fruits with many seeds</span>
+            </div>
+            <p class="mt-3"><span class="scientific-name">Lawsonia inermis L.</span> · Family: Lythraceae</p>
+        </div>
+    </div>
+
+    <!-- Protect banner -->
+    <div class="protect-banner">
+        <i class="fas fa-hand-holding-heart"></i>
+        <p>🌱 Why should we protect plants like henna? They provide food, habitat, oxygen, cultural value, materials and education. Observe, learn, protect.</p>
+    </div>
+
+    <!-- sources -->
+    <div class="sources">
+        <span><i class="fas fa-book"></i> Royal Botanic Gardens, Kew – Plants of the World Online</span>
+        <span><i class="fas fa-shield-alt"></i> U.S. Food and Drug Administration – Henna and “Black Henna” safety information</span>
+    </div>
+</div>
+</body>
+</html>
